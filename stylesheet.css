@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #1c1a1d;
+  color: white;
+  font-family: 'Atkinson Hyperlegible Next';
+  width: 100%
+}
+
+.container {
+    margin: 15%;
+}
+
+.container-contact {
+    margin: 15%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hero {
+margin-top: 25px;
+margin-left: 25px
+}
+
+h1 {
+  
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  font-size:50px;
+  line-height: 1em;
+  margin-bottom: 50px;
+}
+
+
+
+h2 {
+   color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  font-size:50px;
+  line-height: 1em;
+  margin-bottom: 50px;
+  
+}
+
+h3 {
+  color: white;
+  accent-color: white;
+  font-weight: 200;
+  font-size: 3em;
+  margin-bottom: 0em;
+  margin-top: 0;
+  
+}
+
+h4 {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+p {
+   font-size: 1.5em; 
+   font-weight: 300;
+}
+
+.row {
+display: flex;
+  flex-direction: row;
+}
+
+.row div {
+  margin-right: 100px;
+  text-align: start;  
+  
+}
+
+ul {
+    list-style-type:none;
+    padding-left: 0px;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+li{
+    margin-top: 5px
+}
+
+a {
+  color: white;
+  text-decoration: underline solid transparent;
+  text-decoration-thickness: 0.1em;
+  transition:  1s ease;
+}
+
+
+a:hover {
+  text-decoration: underline ;
+  text-decoration-thickness: 0.1em;
+  text-decoration-color: #ff4fbb;
+  transition: 1s;
+
+}
+
+.mailto-wrapper {
+  position: relative;
+}
+
+.mailto-message {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  position: absolute;
+  display: none;
+  width: auto;
+  white-space: nowrap;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.mailto-message:after {
+  content: "";
+}
+
+.mailto-wrapper:hover .mailto-message {
+  display: block;
+}
+
+.copy-link {
+    color: #ff4fbb;
+    font-weight: 500;
+}
+
+.copy-link::before {
+  content:'\f0c5';  
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1em;
+  font-weight: 900;
+  padding-right: 5px
+}
+
+nav {
+padding:25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.nav-item {
+    margin-right:50px;
+    font-size: 1em;
+}

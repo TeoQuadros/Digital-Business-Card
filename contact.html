@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teo Quadros, designer</title>
+    <link href="stylesheet.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Assets/favicon.ico">
+ <script src="https://kit.fontawesome.com/e63a39e947.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-contact">
+        <h1>hello there :)</h1>
+        
+            <h2><a class="copy-link" href="mailto:teo-quadros@proton.me">teo-quadros@proton.me</a></h2>
+
+    <script>
+      const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+      mailtoLinks.forEach(link => {
+        const email = link.href.replace('mailto:', '').split('?')[0];
+        link.dataset.email = email;
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          // Copy email to clipboard
+          navigator.clipboard.writeText(email);
+
+          try {
+            // Show feedback to user
+            const originalText = link.textContent;
+            link.textContent = 'Email copied!';
+
+            // Reset text after 2 seconds
+            setTimeout(() => {
+              link.textContent = originalText;
+            }, 2000);
+          }
+          catch (err) {
+            console.error('Failed to copy email:', err);
+            alert('Could not copy email address. Please try again.');
+          }
+        });
+
+        // Add a title attribute for hover tooltip
+        link.title = `Click to copy: ${email}`;
+      });
+    </script>
+
+            
+        
+    
+    </div>
+
+
+    
+
+
+</body>
