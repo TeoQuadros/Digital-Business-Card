@@ -73,6 +73,10 @@ p {
     max-width: 70em
 }
 
+b {
+  font-weight: 600;
+}
+
 .row {
 display: flex;
   flex-direction: row;
@@ -87,6 +91,14 @@ display: flex;
 ul {
     list-style-type:none;
     padding-left: 0px;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.bullet {
+list-style-type: circle;
+
+    padding-left: 20px;
     font-size: 1.5em;
     font-weight: 300;
 }
@@ -160,4 +172,69 @@ padding:25px;
 .nav-item {
     margin-right:50px;
     font-size: 1em;
+}
+
+button.accordion {
+  display: flex;
+  font-family: 'Atkinson Hyperlegible Next';
+  font-size: 1.4em;
+  background-color: #1c1a1d;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 1s;
+  align-items: center;
+  margin-left: 0;
+  margin-top: 1.5em;
+  border-bottom: solid #1c1a1d;
+  border-radius: 0px;
+  transition: 0.4s;
+}
+
+
+.active, .accordion:hover {
+  background-color: #1c1a1d;
+  color: white;
+  border-bottom: solid white 1px; 
+  border-radius: 0px;
+  transition: 0.4s;
+}
+
+.panel {
+  
+  background-color: #1c1a1d;
+   max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-size: 0.8em;
+}
+
+.chevron::after {
+  content:'\f078';  
+  font-family: 'Font Awesome 5 Free';
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.accordion:after {
+  content: '\f078'; /* Unicode character for "plus" sign (+) */
+  font-size: 1em;
+  color: white;
+  float: right;
+   font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-left:1em
+}
+
+.active:after {
+ content: '\f077'; /* Unicode character for "plus" sign (+) */
+  font-size: 1em;
+  color: white;
+  float: right;
+   font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-left:1em /* Unicode character for "minus" sign (-) */
 }
