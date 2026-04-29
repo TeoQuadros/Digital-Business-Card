@@ -2,76 +2,82 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Teo Quadros, designer</title>
-    <link href="stylesheet.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="Assets/favicon.ico">
-<script src="https://kit.fontawesome.com/e63a39e947.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teo Quadros, designer</title>
+  <link href="stylesheet.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="Assets/favicon.ico">
+  <script src="https://kit.fontawesome.com/e63a39e947.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<nav>
-   <a class="nav-item" id="home">home</a>
-   <a class="nav-item" id="services">services</a>
-   <a class="copy-linknav" href="mailto:teo-quadros@proton.me">teo-quadros@proton.me</a></h2>
-</nav>
+  <nav>
+    <a class="nav-item" id="home" href="index.html">home</a>
+    <a class="nav-item" id="services" href="services.html">services</a>
+    <a class="nav-item" id="contact" href="contact.html">contact</a>
+  </nav>
 
-<script>
-      const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-      mailtoLinks.forEach(link => {
-        const email = link.href.replace('mailto:', '').split('?')[0];
-        link.dataset.email = email;
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
+  <script>
+    const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+    mailtoLinks.forEach(link => {
+      const email = link.href.replace('mailto:', '').split('?')[0];
+      link.dataset.email = email;
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
 
-          // Copy email to clipboard
-          navigator.clipboard.writeText(email);
+        // Copy email to clipboard
+        navigator.clipboard.writeText(email);
 
-          try {
-            // Show feedback to user
-            const originalText = link.textContent;
-            link.textContent = 'Email copied!';
+        try {
+          // Show feedback to user
+          const originalText = link.textContent;
+          link.textContent = 'Email copied!';
 
-            // Reset text after 2 seconds
-            setTimeout(() => {
-              link.textContent = originalText;
-            }, 2000);
-          }
-          catch (err) {
-            console.error('Failed to copy email:', err);
-            alert('Could not copy email address. Please try again.');
-          }
-        });
-
-        // Add a title attribute for hover tooltip
-        link.title = `Click to copy: ${email}`;
+          // Reset text after 2 seconds
+          setTimeout(() => {
+            link.textContent = originalText;
+          }, 2000);
+        }
+        catch (err) {
+          console.error('Failed to copy email:', err);
+          alert('Could not copy email address. Please try again.');
+        }
       });
-    </script>
 
+      // Add a title attribute for hover tooltip
+      link.title = `Click to copy: ${email}`;
+    });
+  </script>
 
-    <div class="container">
-        <h1>Teo Quadros, designer</h1>
-        <p>Hello, I’m Teo.
-            <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-            tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
-            erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique
-            posuere.</p>
+  
+    <div class="hero">
+      <h1>Teo Quadros, designer</h1>
+      <p>Hello, I’m Teo.
+        <br>I am a designer with over four years experience in web design, UX/UI and
+        vector graphics. I define my style as flexible and eclectic, with an
+        implementation-forward approach. My skillset is wide and my approach to design deeply holistic. I enjoy the
+        variety and flexibility that comes from wielding many tools and understanding a range of processes within the
+        design ecosystem.
 
-            <div class="row">
-        <div><p><a href="services.html">how can I help you today?</a></p></div>
-        
+        I love to solve design challenges, centering you, the client, at every stage of a project.
+      </p>
+
+      <div class="row">
+        <div>
+          <p><a href="services.html">how can I help you today?</a></p>
+        </div>
+
+      </div>
     </div>
-    </div>
 
 
-    
+
 
 
 </body>

@@ -17,16 +17,83 @@
 </head>
 
 <body>
+
+<nav>
+   <a class="nav-item" id="home" href="index.html">home</a>
+   <a class="nav-item" id="services" href="services.html">services</a>
+    <a class="nav-item" id="contact" href="contact.html">contact</a>
+</nav>
+
+<script>
+      const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+      mailtoLinks.forEach(link => {
+        const email = link.href.replace('mailto:', '').split('?')[0];
+        link.dataset.email = email;
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          // Copy email to clipboard
+          navigator.clipboard.writeText(email);
+
+          try {
+            // Show feedback to user
+            const originalText = link.textContent;
+            link.textContent = 'Email copied!';
+
+            // Reset text after 2 seconds
+            setTimeout(() => {
+              link.textContent = originalText;
+            }, 2000);
+          }
+          catch (err) {
+            console.error('Failed to copy email:', err);
+            alert('Could not copy email address. Please try again.');
+          }
+        });
+
+        // Add a title attribute for hover tooltip
+        link.title = `Click to copy: ${email}`;
+      });
+    </script>
+
+<!-- Scroll Button -->
+
+    <button onclick="topFunction()" id="ScrollBtn" title="Go to top" aria-label="Scroll to top">
+        <div>^</div>
+    </button>
+
+          <script>  document.addEventListener('DOMContentLoaded', () => {
+            const scrollToTopBtn = document.getElementById('ScrollBtn');
+            const scrollThreshold = 200; // Show button after scrolling 200px
+
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+                    scrollToTopBtn.style.display = "block";
+                    scrollToTopBtn.style.opacity = "1"; // Make it appear
+                } else {
+                    scrollToTopBtn.style.display = "none"; // Hide it completely
+                    scrollToTopBtn.style.opacity = "0"; // Make it disappear
+                }
+            }
+
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // This creates the visual, smooth scroll
+                });
+            });
+        });
+</script>
+
     <div class="container">
         <h1>design services</h1>
 
-        <ul>
-            <li><a href="#website-design">website design</a></li>
-            <li><a href="#graphics">graphics</a></li>
-
-            <li><a href="#logo-design">logo design / redesign</a></li>
-            <li><a href="#audit">design audit</a></li>
-            <li><a href="#odd-jobs">small designs</a></li>
+        <ul class="contents">
+            <li><a href="#vector-graphics">vector graphics</a></li>
+            <li><a href="#digital-design">digital design</a></li>
+            <li><a href="#branding">branding</a></li>          
             <li><a href="#charity">design for a cause</a></li>
         </ul>
 
@@ -34,191 +101,287 @@
     </div>
 
     <div class="container">
-        <h2>Vector graphics</h2>
+        <h2 id="vector-graphics">vector graphics</h2>
 
         <button class="accordion">Custom vector graphics</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>placeholder</li>
+               
+            </ul>
+            <p><b>Price:</b> from £100</p>
 
         </div>
 
         <button class="accordion">Logo / icon vectorizing</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>Convert your flat (rasterised) logo or icons into vector form.</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>placeholder</li>
+                
+            </ul>
+            <p><b>Price:</b> from £50</p>
 
         </div>
 
         <button class="accordion">sticker design</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>Because everybody loves stickers :)</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>placeholder</li>
+                
+            </ul>
+            <p><b>Price:</b> £50 per design, set of 3 themed designs for £100</p>
 
         </div>
 
         <button class="accordion">icon pack (5,10,20)</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>placeholder</li>
+                
+            </ul>
+            <p><b>Price:</b> £50 for 5 icons</p>
 
         </div>
 
         <button class="accordion">product label </button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>Figma design file</li>
+                <li>PDF on request</li>
+                <li>Mini pattern library</li>
+                <li>2 feedback rounds for making adjustments</li>
+            </ul>
+            <p><b>Price:</b> £300</p>
+
 
         </div>
 
     </div>
 
     <div class="container">
-        <h2>Digital Design</h2>
+        <h2 id="digital-design">digital design</h2>
 
         <button class="accordion">Website Landing page</button>
         <div class="panel">
-            <p>An eye-catching landing page focused on your unique brand identity, to celebrate your mission and get people excited about your product or service.</p>
-<ul class="bullet">
-    <li>Figma design file</li>
-    <li>PDF on request</li>
-    <li>Mini pattern library</li>
-    <li>2 feedback rounds for making adjustments</li>
-</ul>
-<p><b>Price:</b> £300</p>
+            <p>An eye-catching landing page focused on your unique brand identity, to celebrate your mission and get
+                people excited about your product or service.</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>Figma design file</li>
+                <li>PDF on request</li>
+                <li>Mini pattern library</li>
+                <li>2 feedback rounds for making adjustments</li>
+            </ul>
+            <p><b>Price:</b> £300</p>
         </div>
 
-        <button class="accordion">Website design	</button>
+        <button class="accordion">Website design </button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>bespoke design service catering to the scope of your project</li>
+                <li>Figma design file</li>
+                <li>PDF on requesttern library</li>
+                <li>Pattern library</li>
+                <li>2 feedback rounds for making adjustments</li>
+                <li>Optional custom vector graphics for an additional fee</li>
+            </ul>
+            <p><b>Price:</b> from £300 for 1 page (please get in touch for a quote for your specific project)</p>
 
         </div>
 
         <button class="accordion">UX / Wireframing</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>Figma design file of low-fidelity wireframes</li>
+                <li>FigJam user journey flowchart</li>
+                <li>PDF on request</li>
+                <li>2 feedback rounds for making adjustments</li>
+            </ul>
+            <p><b>Price:</b> £30 hourly rate (please get in touch for a quote for your specific project)</p>
 
         </div>
 
         <button class="accordion">design audit</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>Do you have the broad strokes of a design you like, but feel like it needs some refinement?
+                <br>Need a fresh pair of eyeballs and a new perspective?
+                <br>I’ll take a look at what you’ve got, and then offer refinements to help your design be its best
+                self.
+            </p>
+            <p>What you'll receive:</p>
+            <p>Fully tailored service depending on project type. This may include:</p>
+            <ul class="bullet">
+                <li>annotations, suggestions and rationale behind alterations</li>
+                <li>direct refinements to project files eg: Figma, Canva, PowerPoint, Affinity, vector designs</li>
+                <li>PDF on request</li>
+            </ul>
+            <p><b>Price:</b> £30 hourly rate (please get in touch for a quote for your specific project)</p>
+
 
         </div>
 
         <button class="accordion">CV/resume design in Canva</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>PDF version</li>
+                <li>Access to editable Canva file, for ease of editing contentquest</li>
+            </ul>
+            <p><b>Price:</b> £75, <br>for students, £30</p>
 
         </div>
 
         <button class="accordion">PowerPoint / Canva presentation design</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>PowerPoint file or access to Canva project</li>
+                <li>Optional custom vector graphics for an additional fee</li>
+            </ul>
+            <p><b>Price:</b> £75 for 5 slides, may vary for shorter or longer presentations</p>
 
         </div>
 
         <button class="accordion">Social media banner</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>High quality PNG in relevant dimensions</li>
+            </ul>
+            <p><b>Price:</b> £50</p>
 
         </div>
 
     </div>
 
     <div class="container">
-        <h2>Branding</h2>
+        <h2 id="branding">branding</h2>
 
-       <button class="accordion">logo design / redesign</button>
+        <button class="accordion">logo design / redesign</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>3 design options</li>
+                <li>2 rounds of feedback/edits</li>
+                <li>Affinity/EPS source file</li>
+                <li>SVGs & high-quality flattened images in formats of choice (WEBP / PNG / JPEG etc) on request</li>
+            </ul>
+            <p><b>Price:</b> £200</p>
 
         </div>
 
         <button class="accordion">brand guideline package</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>logo usage/spacing</li>
+                <li>identity elements</li>
+                <li>pattern/colour system</li>
+                <li>fonts usage</li>
+                <li>accessibility notes</li>
+                <li>sizing templates, (as applicable) in Canva or Figma</li>
+                <li>Deliverable format of choice, depending on your requirements (Figma, PDF, Notion etc)</li>
+            </ul>
+            <p><b>Price:</b> £350</p>
 
         </div>
 
         <button class="accordion">brand refresh</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>Don't need a full rebrand, but want some elements of your brand identity reworked?</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>colour palette refresh</li>
+                <li>logo refinement</li>
+                <li>branded materials (business card, LinkedIn banner, stickers)</li>
+                <li>custom vector graphics</li>
+                <li>new font selection</li>
+                <li>website design tweaks / refinement </li>
+                <li>accessibility upgrades</li>
+            </ul>
+            <p><b>Price:</b> This is a fully custom service, please get in touch for a quote</p>
 
         </div>
 
         <button class="accordion">business card</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>2 design options</li>
+                <li>Print-friendly source file</li>                
+            </ul>
+            <p><b>Price:</b> £100</p>
 
         </div>
 
         <button class="accordion">LinkedIn profile banner</button>
         <div class="panel">
-            <p>dfjbjkdj</p>
+            <p>What you'll receive:</p>
+            <ul class="bullet">
+                <li>Figma design file</li>
+                <li>PDF on request</li>
+                <li>Mini pattern library</li>
+                <li>2 feedback rounds for making adjustments</li>
+            </ul>
+            <p><b>Price:</b> £300</p>
 
         </div>
 
     </div>
 
-<script>
-    
-      var acc = document.getElementsByClassName("accordion");
-      var i;
+    <script>
 
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-        });
-      }
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
     </script>
 
 
-    <div class="container" id="website-design">
-        <h2>website design</h2>
-        <p>placeholder</p>
-    </div>
 
-    <div class="container" id="graphics">
-        <h2>graphics</h2>
-        <p>placeholder</p>
-    </div>
-
-    <div class="container" id="logo-design">
-        <h2>logo design / redesign</h2>
-        <p>placeholder</p>
-    </div>
-
-    <div class="container" id="audit">
-        <h2>design audit</h2>
-        <p>Have the broad strokes of a design you like, but feel like it needs some refinement?
-            <br>Need a fresh pair of eyeballs and a new perspective?
-            <br>I’ll take a look at what you’ve got, and then offer small refinements to help your design be its best
-            self.
-        </p>
-    </div>
-
-    <div class="container" id="odd-jobs">
-        <h2>small designs / odd jobs</h2>
-        <ul>
-            <li>business cards</li>
-            <li>CV / resumes</li>
-            <li>social media banners</li>
-            <li>product labels</li>
-            <li>presentations</li>
-        </ul>
-
-        <p>Need a small design not listed here? Just ask!</p>
-    </div>
 
     <div class="container" id="charity">
-        <h2>design for a cause <3< /h2>
+        <h2>design for a cause <3</h2>
                 <p>Are you a charity, non-profit or other lovely person helping to make the world a better place?
                     I offer reduced/sliding scale/pay-what-you-can rates, or pro-bono, depending on your individual
                     circumstances.</p>
                 <p>Please <a href="contact.html">get in touch</a> to discuss how I can support your mission.
                 </p>
     </div>
+
+    <div class="container-footer">
+     <footer>
+            <div class="footer-item">
+                <p class="extra-small">©Teo Quadros,
+                    <script type="text/javascript">var year = new Date(); document.write(year.getFullYear());</script>
+                </p>
+            </div>
+            <div class="footer-item">
+                <p class="extra-small">Site designed & built by me</p>
+            </div>
+            <div class="footer-item">
+                <p class="extra-small"><a href="Privacy-Policy.html">Privacy Policy</a></p>
+            </div>
+        </footer>
+        </div>
 
 </body>

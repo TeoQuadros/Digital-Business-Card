@@ -16,6 +16,8 @@ body {
 
 .container {
     margin: 15%;
+    margin-top: 10%;
+    max-width: 1000px;
 }
 
 .container-contact {
@@ -25,16 +27,24 @@ body {
     
 }
 
+
+
 .hero {
-margin-top: 25px;
-margin-left: 25px
+margin-left: 15%;
+margin-right: 15%;
+margin-top:10%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    
+    
 }
 
 h1 {
   
   color: hsl(0, 0%, 100%);
-  font-weight: bold;
-  font-size:68px;
+  font-weight: 500;
+  font-size:80px;
   line-height: 1em;
   margin-bottom: 50px;
 }
@@ -43,7 +53,7 @@ h1 {
 
 h2 {
    color: hsl(0, 0%, 100%);
-  font-weight: bold;
+  font-weight: 500;
   font-size:50px;
   line-height: 1em;
   margin-bottom: 50px;
@@ -75,6 +85,39 @@ p {
 
 b {
   font-weight: 600;
+}
+
+.contents {
+  font-size: 50px; 
+   font-weight: 100;
+    max-width: 70em
+}
+
+#ScrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 25px;
+  font-family: 'Atkinson Hyperlegible Next';
+  border: none;
+  outline: solid;
+  outline-width: 2px;
+  background-color: #1c1a1d;
+  color: white;
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 8px;
+  border-radius: 4px;
+}
+
+#ScrollBtn:hover {
+  background-color: white;
+  color: #1c1a1d;
+  
+  transition: 0.5s;
 }
 
 .row {
@@ -171,7 +214,12 @@ padding:25px;
 
 .nav-item {
     margin-right:50px;
-    font-size: 1em;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+#contact {
+  color: #ff4fbb;
 }
 
 button.accordion {
@@ -237,4 +285,18 @@ button.accordion {
    font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-left:1em /* Unicode character for "minus" sign (-) */
+}
+
+.container-footer {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  font-size: 0.6em;
+  width: 100%;
 }
